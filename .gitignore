@@ -3,3 +3,6 @@
 ################################################################################
 
 /educationalpp/.vs
+/.vs
+/educationalpp/educationalpp/obj
+/educationalpp/educationalpp/bin/Debug/net6.0

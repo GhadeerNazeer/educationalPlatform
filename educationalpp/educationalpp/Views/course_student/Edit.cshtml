@@ -1,0 +1,70 @@
+﻿@model educationalpp.viewmodel.coursestudentmodel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>courses and student</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+               <div class="form-group">
+                <label asp-for="studentid" class="control-label">student</label>
+                <select asp-for="studentid" class="form-control" asp-items="Model.student">  </select>
+                <span asp-validation-for="studentid" class="text-danger"></span>
+            </div>   <br /> 
+              <div class="form-group">
+                <label asp-for="courseid" class="control-label">course</label>
+                <select asp-for="courseid" class="form-control" asp-items="Model.course">  </select>
+                <span asp-validation-for="courseid" class="text-danger"></span>
+            </div>
+             <br /> 
+            <div class="form-group">
+                <label asp-for="mark" class="control-label"></label>
+                <input asp-for="mark" class="form-control" />
+                <span asp-validation-for="mark" class="text-danger"></span>
+            </div>  <br /> 
+            
+             <div class="form-group">
+                 select student status </div>
+                 <br />
+      
+             <div class="form-group">
+
+                <div class="form-check">
+                  <input class="form-check-input" id="e" type="radio" asp-for="student_status" value="pass" checked>
+                  <label class="form-check-label" for="e">
+                    Pass
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" id="b" type="radio" asp-for="student_status" value="faild"  >
+                  <label class="form-check-label" for="b">
+                    Failed
+                  </label>
+               </div>
+             </div>
+               <br />
+            <div class="form-group">
+                <label asp-for="total_payment" class="control-label"></label>
+                <input asp-for="total_payment" class="form-control" />
+                <span asp-validation-for="total_payment" class="text-danger"></span>
+            </div> <br /> 
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                  <a class="btn btn-success" class="btn btn-success" asp-action="Index">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+ 
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
